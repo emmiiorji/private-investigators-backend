@@ -2,6 +2,12 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require_relative "config/application"
-assets:precompile
+
+namespace :assets do
+  task :precompile do
+    ENV["RAILS_ENV"] ||= "production"
+    system("rake assets:precompile")
+  end
+end
 
 Rails.application.load_tasks
