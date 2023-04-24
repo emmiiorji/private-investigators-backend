@@ -3,11 +3,6 @@
 
 require_relative "config/application"
 
-namespace :assets do
-  task :precompile do
-    ENV["RAILS_ENV"] ||= "production"
-    system("rake assets:precompile")
-  end
-end
+Rake::Task['assets:precompile'].invoke
 
 Rails.application.load_tasks
