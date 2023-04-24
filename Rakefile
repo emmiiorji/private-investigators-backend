@@ -3,6 +3,4 @@
 
 require_relative "config/application"
 
-Rake::Task['assets:precompile'].invoke
-
 Rails.application.load_tasks
